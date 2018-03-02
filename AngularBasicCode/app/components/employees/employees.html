@@ -1,0 +1,27 @@
+<h2>{{title}}</h2>
+
+<ul>
+    <li myUnderLine myColor *ngFor="let employee of employeeList"
+  ><emp [empid]="employee.id" [name]="employee.name" (empClickEvent)="clickHandler($event)"></emp>
+</li>
+    
+</ul>
+
+<h2>Form handling</h2>
+<label>Name:&nbsp;</label>
+<input type="text" />
+<br/><br/><button (click)="addEmpClickHandler()">Add Employee</button>
+<br/><br/><span *ngIf="empName">Your have entered: {{empName | lowercase}}</span>
+
+<br/>
+<br>
+<br>
+<select [(ngModel)]="state" *ngIf="stateList" (change)="changeHandler($event);">
+  <option *ngFor="let s of stateList" [value]="s.id">{{s.name}}</option>
+</select>
+
+<select *ngIf="cityList" [(ngModel)]="city">
+  <option *ngFor="let c of cityList" [value]="c.id">{{c.name}}</option>
+</select>
+
+
