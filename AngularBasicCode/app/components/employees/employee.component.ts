@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     template: `
         
         <span (click)="clickHandler(name);">{{empid}}&nbsp;{{name | uppercase}}</span>
-
+		<span>New changes to this file</span>
     `
 })
 
