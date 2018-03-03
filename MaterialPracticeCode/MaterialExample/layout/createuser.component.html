@@ -1,0 +1,15 @@
+<div>
+    <H1>Hello {{ user }} !! Create your profile.</H1>
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+        <mat-step label="Step 1">
+            <capture-page></capture-page>  
+        </mat-step>
+        <mat-step label="Step 2">
+            <verify-page></verify-page>
+        </mat-step>
+        <mat-step  label="Step 3">
+            <confirm-page (startJourney)=startJourney(stepper)></confirm-page>   
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>
